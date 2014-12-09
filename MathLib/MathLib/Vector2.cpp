@@ -1,6 +1,6 @@
 #include "MathLib.h"
 #include <math.h>
-#include <iostream>
+
 
 
 
@@ -50,3 +50,8 @@ Vector2Math Vector2Math::operator*(float Other)
 	Result.y = y * Other;
 	return Result;
 }
+Vector2Math Vector2Math::lerp(Vector2Math Start, Vector2Math End, float T)
+{
+	return Start + (End - Start) * T;
+}
+
