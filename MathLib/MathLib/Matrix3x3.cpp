@@ -18,15 +18,53 @@ Matrix3x3::Matrix3x3()
 
 Vector2Math Matrix3x3::Scale(Vector2Math Other)
 {
-	 // / / / / / / / / / / / / / / / / / //
-	//U/N/D/E/R/ /C/O/N/S/T/R/U/C/T/I/O/N//
-   // / / / / / / / / / / / / / / / / / //
 	Vector2Math result;
 	result.x = matrix[0] * Other.x;
 	result.y = matrix[4] * Other.y;
 	//matrix[8] * z;
 	return result;
 
+}
+//X Roatation
+Matrix3x3 Matrix3x3::rotationX(float Rads)
+{
+	  // / / / / / / / / / / / / / / / / / //
+	 //U/N/D/E/R/ /C/O/N/S/T/R/U/C/T/I/O/N//
+	// / / / / / / / / / / / / / / / / / //
+	
+
+	matrix[0] = 1; matrix[1] = 0;	matrix[2] = 0;
+	matrix[3] = 0; matrix[4] = cos(Rads); matrix[5] = sin(Rads);
+	matrix[6] = 0; matrix[7] = -sin(Rads); matrix[8] = cos(Rads);
+
+}
+
+
+//Y Rotation
+Matrix3x3 Matrix3x3::rotationY(float Rads)
+{
+	matrix[0] = cos(Rads); matrix[1] = 0; matrix[2] = -sin(Rads);
+	matrix[3] = 0; matrix[4] = 1; matrix[5] = 0;
+	matrix[6] = sin(Rads); matrix[7] = 0; matrix[8] = cos(Rads);
+}
+
+
+//Z Rotation
+Matrix3x3 Matrix3x3::rotationZ(float Rads)
+{
+	matrix[0] = cos(Rads); matrix[1] = sin(Rads); matrix[2] = 0;
+	matrix[3] = -sin(Rads); matrix[4] = cos(Rads); matrix[5] = 0;
+	matrix[6] = 0; matrix[7] = 0; matrix[8] = 1;
+}
+
+
+//Vector Transforming
+Vector3Math Matrix3x3::TransformVector(Vector3Math Other)
+{
+	Other.x = Other.x * matrix[0] + Other.y * matrix[3] + Other.z * matrix[6];
+	Other.y = Other.x * matrix[1] + Other.y * matrix[4] + Other.z * matrix[7];
+	Other.z = Other.x * matrix[2] + Other.y * matrix[5] + Other.z * matrix[8];
+	return Other;
 }
 
 

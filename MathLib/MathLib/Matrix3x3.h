@@ -10,10 +10,12 @@ public:
 	~Matrix3x3();
 	//--------------------------------------------
 	Vector2Math Scale(Vector2Math Other);
-	
+	Vector3Math TransformVector(Vector3Math Other);
+	Matrix3x3 rotationX(float Rads);
+	Matrix3x3 rotationY(float Rads);
+	Matrix3x3 rotationZ(float Rads);
 	//float Magnitude();
-
-	//float z;
+	
 	
 
 
