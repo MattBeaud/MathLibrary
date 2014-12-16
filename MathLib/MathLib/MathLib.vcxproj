@@ -75,8 +75,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MathLib.h" />
+    <ClInclude Include="Matrix3x3.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Matrix3x3.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />
   </ItemGroup>

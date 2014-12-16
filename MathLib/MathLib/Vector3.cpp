@@ -4,7 +4,7 @@
 
 
 
-
+//Normilization
 void Vector3Math::Normalize()
 {
 	float Length = Magnitude();
@@ -13,7 +13,7 @@ void Vector3Math::Normalize()
 	z /= Length;
 
 }
-
+//Cross Product
 Vector3Math Vector3Math::CrossProd(Vector3Math Other)
 {
 	Vector3Math crossProduct;
@@ -22,19 +22,19 @@ Vector3Math Vector3Math::CrossProd(Vector3Math Other)
 	crossProduct.z = x * Other.y - y * Other.x;
 	return crossProduct;
 }
-
+//Dot Product
 float Vector3Math::DotProd(Vector3Math Other)
 {
 	float dotProd = x * Other.x + y * Other.y + Other.z;
 	return dotProd;
 }
-
+//Magnitdue
 float Vector3Math::Magnitude()
 {
 	float Magnitude = sqrt((x*x + y*y + z*z));
 	return Magnitude;
 }
-
+//Addition Operator
 Vector3Math Vector3Math::operator+(Vector3Math Other)
 {
 	Vector3Math Result;
@@ -44,7 +44,7 @@ Vector3Math Vector3Math::operator+(Vector3Math Other)
 	return Result;
 
 }
-
+//Subtraction Operator
 Vector3Math Vector3Math::operator-(Vector3Math Other)
 {
 	Vector3Math Result;
@@ -54,7 +54,7 @@ Vector3Math Vector3Math::operator-(Vector3Math Other)
 	return Result;
 
 }
-
+//Multiplication Operator
 Vector3Math Vector3Math::operator*(float Other)
 {
 	Vector3Math Result;
