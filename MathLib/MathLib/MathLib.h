@@ -31,7 +31,9 @@ public:
 	float x;
 	float y;
 	float z;
-
+	float w;
+	
+	
 	Vector3Math CrossProd(Vector3Math Other);
 	float DotProd(Vector3Math Other);
 	void Normalize();

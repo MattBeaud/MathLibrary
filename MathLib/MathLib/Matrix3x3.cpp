@@ -21,7 +21,7 @@ Vector2Math Matrix3x3::Scale(Vector2Math Other)
 	Vector2Math result;
 	result.x = matrix[0] * Other.x;
 	result.y = matrix[4] * Other.y;
-	//matrix[8] * z;
+	
 	return result;
 
 }
@@ -36,6 +36,7 @@ Matrix3x3 Matrix3x3::rotationX(float Rads)
 	matrix[0] = 1; matrix[1] = 0;	matrix[2] = 0;
 	matrix[3] = 0; matrix[4] = cos(Rads); matrix[5] = sin(Rads);
 	matrix[6] = 0; matrix[7] = -sin(Rads); matrix[8] = cos(Rads);
+	return *this;
 
 }
 
@@ -46,6 +47,7 @@ Matrix3x3 Matrix3x3::rotationY(float Rads)
 	matrix[0] = cos(Rads); matrix[1] = 0; matrix[2] = -sin(Rads);
 	matrix[3] = 0; matrix[4] = 1; matrix[5] = 0;
 	matrix[6] = sin(Rads); matrix[7] = 0; matrix[8] = cos(Rads);
+	return *this;
 }
 
 
@@ -55,7 +57,9 @@ Matrix3x3 Matrix3x3::rotationZ(float Rads)
 	matrix[0] = cos(Rads); matrix[1] = sin(Rads); matrix[2] = 0;
 	matrix[3] = -sin(Rads); matrix[4] = cos(Rads); matrix[5] = 0;
 	matrix[6] = 0; matrix[7] = 0; matrix[8] = 1;
+	return *this;
 }
+
 
 
 //Vector Transforming

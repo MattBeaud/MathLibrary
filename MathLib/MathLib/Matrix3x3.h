@@ -1,6 +1,7 @@
 #pragma once
 #include <math.h>
 #include "MathLib.h"
+
 class Matrix3x3
 {
 public:
@@ -9,6 +10,7 @@ public:
 
 	~Matrix3x3();
 	//--------------------------------------------
+	
 	Vector2Math Scale(Vector2Math Other);
 	Vector3Math TransformVector(Vector3Math Other);
 	Matrix3x3 rotationX(float Rads);
@@ -16,7 +18,7 @@ public:
 	Matrix3x3 rotationZ(float Rads);
 	//float Magnitude();
 	
-	
+	Matrix3x3 OrthoProj(float Top, float Bottom, float Left, float Right, float Far, float Near);
 
 
 	float matrix[9];
