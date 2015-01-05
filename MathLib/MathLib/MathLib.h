@@ -46,7 +46,19 @@ public:
 
 
 };
+class Vector4Math
+{
+public:
+	float x;
+	float y;
+	float z;
+	float w;
 
+	void Normalize();
+	float Magnitude();
+
+
+};
 
 
 #endif
