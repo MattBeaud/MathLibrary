@@ -58,6 +58,7 @@ public:
 	float Magnitude();
 
 
+
 };
 
 
