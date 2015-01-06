@@ -1,7 +1,7 @@
 #ifndef _MATHLIB_H_
 #define _MATHLIB_H_
-
-
+#include <iostream>
+using namespace std;
 
 
 class Vector2Math
@@ -56,10 +56,17 @@ public:
 
 	void Normalize();
 	float Magnitude();
+	Vector4Math Hexadecimal(unsigned int Other);
 
 
 
 };
+
+static float lerp(float Start, float End, float T)
+{
+	return Start + (End - Start) * T;
+}
+
 
 
 #endif
