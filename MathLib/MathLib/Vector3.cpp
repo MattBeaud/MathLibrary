@@ -25,7 +25,7 @@ Vector3Math Vector3Math::CrossProd(Vector3Math Other)
 //Dot Product
 float Vector3Math::DotProd(Vector3Math Other)
 {
-	float dotProd = x * Other.x + y * Other.y + Other.z;
+	float dotProd = x * Other.x + y * Other.y + z * Other.z;
 	return dotProd;
 }
 //Magnitdue
@@ -63,9 +63,18 @@ Vector3Math Vector3Math::operator*(float Other)
 	Result.z = z * Other;
 	return Result;
 }
-
-Vector3Math Vector3Math::lerp(Vector3Math Start, Vector3Math End, float T)
+bool operator==(const Vector3Math& left, const Vector3Math& right)
 {
-	return Start + (End - Start) * T;
+	if (std::abs(left.x - right.x) < 0.0001f &&
+		std::abs(left.y - right.y) < 0.0001f &&
+		std::abs(left.z - right.z) < 0.0001f)
+	{
+		return true;
+	}
+	return false;
 }
 
+Vector3Math Vector3Math::lerp(Vector3Math End, float T)
+{
+	return *this + (End - *this) * T;
+}

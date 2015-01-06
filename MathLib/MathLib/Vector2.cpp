@@ -51,8 +51,17 @@ Vector2Math Vector2Math::operator*(float Other)
 	Result.y = y * Other;
 	return Result;
 }
-Vector2Math Vector2Math::lerp(Vector2Math Start, Vector2Math End, float T)
+Vector2Math Vector2Math::lerp(Vector2Math End, float T)
 {
-	return Start + (End - Start) * T;
+	return *this + (End - *this) * T;
 }
 
+bool operator==(const Vector2Math& left, const Vector2Math& right)
+{
+	if (std::abs(left.x - right.x) < 0.0001f &&
+		std::abs(left.y - right.y) < 0.0001f)
+	{
+		return true;
+	}
+	return false;
+}

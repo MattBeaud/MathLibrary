@@ -16,11 +16,12 @@ public:
 	void Normalize();
 	float Magnitude();
 	
-	Vector2Math lerp(Vector2Math Start, Vector2Math End, float T);
+	Vector2Math lerp(Vector2Math End, float T);
 	Vector2Math operator + (Vector2Math Other);
 	Vector2Math operator - (Vector2Math Other);
 	Vector2Math operator * (float Other);
 
+	friend bool operator==(const Vector2Math& left, const Vector2Math& right);
 	
 
 };
@@ -31,7 +32,7 @@ public:
 	float x;
 	float y;
 	float z;
-	float w;
+	float w;	//@JUSTIN LOOK AT ME
 	
 	
 	Vector3Math CrossProd(Vector3Math Other);
@@ -39,11 +40,11 @@ public:
 	void Normalize();
 	float Magnitude();
 
-	Vector3Math lerp(Vector3Math Start, Vector3Math End, float T);
+	Vector3Math lerp(Vector3Math End, float T);
 	Vector3Math operator + (Vector3Math Other);
 	Vector3Math operator - (Vector3Math Other);
 	Vector3Math operator * (float Other);
-
+	friend bool operator==(const Vector3Math& left, const Vector3Math& right);
 
 };
 class Vector4Math
