@@ -95,7 +95,7 @@ Matrix4x4 Matrix4x4::rotationZ(float Rads)
 
 
 //Vector Transforming
-Vector3Math Matrix4x4::TransformVector(Vector3Math Other)
+Vector4Math Matrix4x4::TransformVector(Vector4Math Other)
 {
 	  // / / / / / / / / / / / / / / / / / //
 	 //U/N/D/E/R/ /C/O/N/S/T/R/U/C/T/I/O/N//

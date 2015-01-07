@@ -10,7 +10,7 @@ public:
 
 	//--------------------------------------------
 	Vector3Math Scale(Vector3Math Other);
-	Vector3Math TransformVector(Vector3Math Other);
+	Vector4Math TransformVector(Vector4Math Other);
 	Matrix4x4 rotationX(float Rads);
 	Matrix4x4 rotationY(float Rads);
 	Matrix4x4 rotationZ(float Rads);

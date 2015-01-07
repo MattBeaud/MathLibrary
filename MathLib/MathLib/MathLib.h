@@ -32,7 +32,7 @@ public:
 	float x;
 	float y;
 	float z;
-	float w;	//@JUSTIN LOOK AT ME
+	//float w;	//@JUSTIN LOOK AT ME
 	
 	
 	Vector3Math CrossProd(Vector3Math Other);
@@ -54,6 +54,10 @@ public:
 	float y;
 	float z;
 	float w;
+
+	Vector4Math operator + (Vector4Math Other);
+	Vector4Math operator - (Vector4Math Other);
+	friend bool operator==(const Vector4Math& left, const Vector4Math& right);
 
 	void Normalize();
 	float Magnitude();

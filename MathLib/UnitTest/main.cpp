@@ -126,13 +126,16 @@ TEST(Vector3, Equality)
 	Vector3Math left;
 	left.x = 1;
 	left.y = 2;
+	left.z = 3;
+
 	Vector3Math right;
 	right.x = 1;
 	right.y = 2;
+	right.z = 3;
 
 	EXPECT_TRUE(left == right);
 }
-
+//------
 TEST(Vector3, Addition)
 {
 	Vector3Math left;
@@ -151,7 +154,7 @@ TEST(Vector3, Addition)
 
 	EXPECT_EQ(expected, left + right);
 }
-
+//------
 TEST(Vector3, Subtraction)
 {
 	Vector3Math left;
@@ -170,7 +173,7 @@ TEST(Vector3, Subtraction)
 
 	EXPECT_EQ(expected, left - right);
 }
-
+//-----
 TEST(Vector3, Normalize)
 {
 	Vector3Math left;
@@ -187,7 +190,7 @@ TEST(Vector3, Normalize)
 
 	EXPECT_EQ(expected, left);
 }
-
+//-----
 TEST(Vector3, LinInter)
 {
 	Vector3Math Start;
@@ -206,7 +209,7 @@ TEST(Vector3, LinInter)
 
 	EXPECT_EQ(expected, Start.lerp(End, 0.5f));
 }
-
+//-----
 TEST(Vector3, Magnitude)
 {
 	Vector3Math left;
@@ -219,7 +222,7 @@ TEST(Vector3, Magnitude)
 
 	EXPECT_FLOAT_EQ(expected, left.Magnitude());
 }
-
+//-----
 TEST(Vector3, DotProd)
 {
 	Vector3Math left;
@@ -234,9 +237,11 @@ TEST(Vector3, DotProd)
 	float expected;
 	expected = 20;
 
-	EXPECT_EQ(expected, left.x * (right.x + left.y * right.y + left.z * right.z));
-}
+	float dotproduct = left.DotProd(right);
 
+	EXPECT_EQ(expected, dotproduct);
+}
+//-----
 TEST(Vector3, CrossProd)
 {
 	Vector3Math left;
@@ -249,9 +254,64 @@ TEST(Vector3, CrossProd)
 	right.z = 6;
 
 	Vector3Math expected;
-	expected.x = -2;
-	expected.y = 4;
-	expected.z = -2;
+	expected.x = -3;
+	expected.y = 6;
+	expected.z = -3;
+
+	Vector3Math crossproduct = left.CrossProd(right);
+
+	EXPECT_EQ(expected, crossproduct);
+}
+//--------------------------------------------------------
+
+//Vector 4 Tests
+//---------------------------------------------------------
+
+TEST(Vector4, Equality)
+{
+	Vector4Math left;
+	left.x = 1;
+	left.y = 2;
+	left.z = 3;
+	left.w = 4;
+	Vector4Math right;
+	right.x = 1;
+	right.y = 2;
+	right.z = 3;
+	right.w = 4;
+
+
+	EXPECT_TRUE(left == right);
+}
+
+TEST(Vector4, Normalization)
+{
+	Vector4Math left;
+	left.x = 2;
+	left.y = 4;
+	left.z = 6;
+	left.w = 8;
+
+	left.Normalize();
+
+	Vector4Math expected;
+	expected.x = 0.182574004f;
+	expected.y = 0.365148008f;
+	expected.z = 0.547722995f;
+ 	expected.w = 0.730297029f;
+
+	EXPECT_EQ(expected, left);
+}
+
+TEST(Vector4, Hexadecimal)
+{
+	Vector4Math Color;
+	Color.x = 200;
+	Color.y = 78;
+	Color.z = 89;
+	Color.w = 100;
+
+	
 
 }
 
