@@ -305,13 +305,16 @@ TEST(Vector4, Normalization)
 
 TEST(Vector4, Hexadecimal)
 {
-	Vector4Math Color;
-	Color.x = 200;
-	Color.y = 78;
-	Color.z = 89;
-	Color.w = 100;
+	Vector4Math color;
 
-	
+	color = color.Hexadecimal(0xFFFFFFFF);
+
+	Vector4Math expected;
+	expected.x = 1;
+	expected.y = 1;
+	expected.z = 1;
+	expected.w = 1;
+	EXPECT_EQ(expected, color);
 
 }
 
