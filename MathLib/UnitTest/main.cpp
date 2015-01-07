@@ -239,6 +239,19 @@ TEST(Vector3, DotProd)
 
 TEST(Vector3, CrossProd)
 {
+	Vector3Math left;
+	left.x = 1;
+	left.y = 2;
+	left.z = 3;
+	Vector3Math right;
+	right.x = 4;
+	right.y = 5;
+	right.z = 6;
+
+	Vector3Math expected;
+	expected.x = -2;
+	expected.y = 4;
+	expected.z = -2;
 
 }
 
