@@ -318,6 +318,25 @@ TEST(Vector4, Hexadecimal)
 
 }
 
+TEST(Main, PowofTwo)
+{
+
+}
+
+TEST(Main, degtorad)
+{
+	unsigned int rad = (3.1415926 / 180);
+	int expected = 0.01745329;
+	EXPECT_EQ(expected, rad);
+}
+
+TEST(Main, radtodeg)
+{
+	unsigned int deg =(180 / 3.1415926) * 4;
+	int expected = deg;
+	EXPECT_EQ(expected, deg);
+}
+
 int main(int argc, char * argv[])
 {
 	::testing::InitGoogleTest(&argc, argv);
