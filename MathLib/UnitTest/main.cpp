@@ -320,21 +320,43 @@ TEST(Vector4, Hexadecimal)
 
 TEST(Main, PowofTwo)
 {
+	float number;
+	number = PowofTwo(35);
+	float expected = 32;
+
+	EXPECT_FLOAT_EQ(expected, number);
 
 }
 
 TEST(Main, degtorad)
 {
-	unsigned int rad = (3.1415926 / 180);
-	int expected = 0.01745329;
-	EXPECT_EQ(expected, rad);
+	float number;
+	number = degtorad(4.f);
+	float expected = 0.0698131701f;
+
+	EXPECT_FLOAT_EQ(expected, number);
 }
 
 TEST(Main, radtodeg)
 {
-	unsigned int deg =(180 / 3.1415926) * 4;
-	int expected = deg;
-	EXPECT_EQ(expected, deg);
+	float number;
+	number = radtodeg(4.f);
+	float expected = 229.183118f;
+
+	EXPECT_FLOAT_EQ(expected, number);
+}
+
+TEST(MathLib, lerp)
+{
+	float start = 4;
+	float end = 8;
+	
+	float expected = 6;
+
+	float actual = lerp(start, end, 0.5f);
+	
+
+	EXPECT_FLOAT_EQ(expected, actual);
 }
 
 int main(int argc, char * argv[])

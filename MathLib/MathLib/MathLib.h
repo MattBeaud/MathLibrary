@@ -66,7 +66,11 @@ public:
 
 
 };
+float degtorad(float deg);
+float radtodeg(float rad);
+float PowofTwo(float value);
 
+//linear interpolation for scalar
 static float lerp(float Start, float End, float T)
 {
 	return Start + (End - Start) * T;
