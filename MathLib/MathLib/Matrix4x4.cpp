@@ -109,7 +109,7 @@ Vector4Math Matrix4x4::TransformVector(Vector4Math Other)
 }
 
 
-//Addition Operator
+//Addition Operatorx
 Matrix4x4 Matrix4x4::operator+(Matrix4x4 Other)
 {
 	Matrix4x4 Result;
